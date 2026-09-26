@@ -325,3 +325,11 @@ def demo_latest():
 @app.get("/demo/feed")
 def demo_feed(limit: int = 10):
     return demo.get_feed(limit)
+
+
+@app.post("/demo/reset")
+def demo_reset():
+    """Clears the demo feed so the dashboard starts from a blank slate —
+    handy between runs when presenting."""
+    demo.reset_feed()
+    return {"status": "reset"}

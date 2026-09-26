@@ -134,6 +134,10 @@ def push_demo_result(entry: dict) -> None:
     _FEED.appendleft(entry)
 
 
+def reset_feed() -> None:
+    _FEED.clear()
+
+
 def get_latest() -> Optional[dict]:
     return _FEED[0] if _FEED else None
 
